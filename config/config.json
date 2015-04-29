@@ -1,0 +1,18 @@
+{
+    "port": "80",
+    "domain": "localhost",
+    "log-level": "dev",
+    "app-view": "views",
+    "app-engine": "ejs",
+    "app-static": "public",
+    "db-cnn": "mongodb://localhost/chat",
+    "session": {
+        "secret": "MySecretWord",
+        "key": "NODESESSID",
+        "cookie": {
+            "path": "/",
+            "maxAge": null,
+            "httpOnly": true
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%=title%></title>
+	<link rel="stylesheet" href="/stylesheets/style.css"/>
+    <script src="/javascripts/chat.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+	<header>
+		<div class="content-wrapper">
+			<div class="float-left">
+				chatNode.js <a href="/logout">exit</a>
+			</div>
+		</div>
+	</header>
+	<div id="body">
+        <div id="window">
+            <div id="chat">
+                <div id="content"></div>
+                <form id="form" action="" onsubmit="return false">
+                    <span id="name"><%=name%></span> :
+                    <input id="field" style="width:340px;" />
+                    <input id="send" type="submit" value="Send" />
+                    <input id="color" type="color" value="#ffffff" />
+                </form>
+            </div>
+    		<div id="users"></div>
+        </div>
+	</div>
+    <div id="footer">
+        <footer>
+            <p>avdeev &copy; 2015</p>
+        </footer>
+    </div>
+</body>
+</html>
