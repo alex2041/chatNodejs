@@ -72,14 +72,14 @@ io.sockets.on('connection', function(client){
     });
     client.on('hello', function(data){
         client.set('nickname', data.name);
-        client.emit('message', {message:'<span style="font-size: 14pt; color: #3366ff;">hi ' + data.name + '</span>'});
-        client.broadcast.emit('message', {message: '<span style="font-size: 14pt; color: #3366ff;">' + data.name + ' вошол в чат.</span>'});
+        client.emit('message', {message:'<span class="sysMes">hi ' + data.name + '</span>'});
+        client.broadcast.emit('message', {message: '<span class="sysMes">' + data.name + ' вошол в чат.</span>'});
         
         if(Object.keys(users).length > 0){
            var userList = getUsers(users);
-           client.emit('message', {message: '<span style="font-size: 14pt; color: #3366ff;">В чате юзеров: ' + Object.keys(users).length + '</span>'});
+           client.emit('message', {message: '<span class="sysMes">В чате юзеров: ' + Object.keys(users).length + '</span>'});
         }else{
-            client.emit('message', {message: '<span style="font-size: 14pt; color: #3366ff;">Аплодисменты первонаху!!!</span>'});
+            client.emit('message', {message: '<span class="sysMes">Аплодисменты первонаху!!!</span>'});
         }
         if(Object.keys(users).length > 0){
            var userList = getUsers(users);
@@ -91,7 +91,7 @@ io.sockets.on('connection', function(client){
     client.on('disconnect', function(data){
         if(Object.keys(users).length > 1){
             client.get('nickname', function(err, name){
-                client.broadcast.emit('message', {message: '<span style="font-size: 14pt; color: #3366ff;">' + name + ' потерялся.</span>'});
+                client.broadcast.emit('message', {message: '<span class="sysMes">' + name + ' потерялся.</span>'});
             });
         };
         delete users[client.id];
